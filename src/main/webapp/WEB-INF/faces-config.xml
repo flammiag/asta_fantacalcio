@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    
+    <name>primefaces_ultima</name>
+    
+    <navigation-rule>
+        <from-view-id>login.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginBean.login}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>secured/utils_1.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <component>
+        <component-type>org.primefaces.component.UltimaMenu</component-type>
+        <component-class>org.primefaces.ultima.component.menu.UltimaMenu</component-class>
+    </component>
+    
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.UltimaMenuRenderer</renderer-type>
+            <renderer-class>org.primefaces.ultima.component.menu.UltimaMenuRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+    
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+       </locale-config>
+       <resource-bundle>
+            <base-name>com.primefaces.hibernate.locale.messages</base-name>
+            <var>msgs</var>
+       </resource-bundle>
+        <el-resolver>
+            org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver
+        </el-resolver>
+    </application>
+    
+    
+    
+</faces-config>

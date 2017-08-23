@@ -1,0 +1,15 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+   <p:submenu id="um_default" label="Template Pages" icon="get_app">
+        <p:menuitem id="um_db_landing" value="Landing" icon="flight_land" outcome="/secured/landing"/>
+        <p:menuitem id="um_empty" value="Empty Page" icon="hourglass_empty" outcome="/secured/empty" />
+        <p:menuitem id="um_login" value="Login Page" icon="verified_user" outcome="/login" />
+        <p:menuitem id="um_error" value="Error Page" icon="error" outcome="/error" />
+        <p:menuitem id="um_404" value="404 Page" icon="error_outline" outcome="/404" />
+        <p:menuitem id="um_access" value="Access Denied Page" icon="security" outcome="/secured/access" />
+    </p:submenu>
+  </ui:composition>

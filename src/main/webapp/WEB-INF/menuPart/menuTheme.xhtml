@@ -1,0 +1,21 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+   <p:submenu id="themes" label="Themes" icon="palette">
+        <p:menuitem id="theme1" value="Indigo - Pink" icon="brush" actionListener="#{guestPreferences.setTheme('indigo')}" ajax="false" />
+        <p:menuitem id="theme2" value="Brown - Green" icon="brush" actionListener="#{guestPreferences.setTheme('brown')}" ajax="false" />
+        <p:menuitem id="theme3" value="Blue - Amber" icon="brush" actionListener="#{guestPreferences.setTheme('blue')}" ajax="false" />
+        <p:menuitem id="theme4" value="Blue Grey - Green" icon="brush" actionListener="#{guestPreferences.setTheme('blue-grey')}" ajax="false" />
+        <p:menuitem id="theme5" value="Dark - Blue" icon="brush" actionListener="#{guestPreferences.setTheme('dark-blue')}" ajax="false" />
+        <p:menuitem id="theme6" value="Dark - Green" icon="brush" actionListener="#{guestPreferences.setTheme('dark-green')}" ajax="false" />
+        <p:menuitem id="theme7" value="Green - Yellow" icon="brush" actionListener="#{guestPreferences.setTheme('green')}" ajax="false" />
+        <p:menuitem id="theme8" value="Purple - Cyan" icon="brush" actionListener="#{guestPreferences.setTheme('purple-cyan')}" ajax="false" />
+        <p:menuitem id="theme9" value="Purple - Amber" icon="brush" actionListener="#{guestPreferences.setTheme('purple-amber')}" ajax="false" />
+        <p:menuitem id="theme10" value="Teal - Lime" icon="brush" actionListener="#{guestPreferences.setTheme('teal')}" ajax="false" />
+        <p:menuitem id="theme11" value="Cyan - Amber" icon="brush" actionListener="#{guestPreferences.setTheme('cyan')}" ajax="false" />
+        <p:menuitem id="theme12" value="Grey - Deep Orange" icon="brush" actionListener="#{guestPreferences.setTheme('grey')}" ajax="false" />
+    </p:submenu>  
+  </ui:composition>

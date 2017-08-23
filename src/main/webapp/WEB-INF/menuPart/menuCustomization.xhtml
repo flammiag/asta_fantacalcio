@@ -1,0 +1,18 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+   <p:submenu id="um_customization" label="Customization" icon="settings_application">
+        <p:menuitem id="custom1" value="Compact Size" icon="fiber_manual_record" actionListener="#{guestPreferences.setCompact(true)}" ajax="false"/>
+        <p:menuitem id="custom2" value="Material Size" icon="fiber_smart_record" actionListener="#{guestPreferences.setCompact(false)}" ajax="false"/>
+        <p:menuitem id="custom3" value="Static Menu" icon="menu" actionListener="#{guestPreferences.setMenuLayout('static')}" ajax="false"/>
+        <p:menuitem id="custom4" value="Overlay Menu" icon="exit_to_app" actionListener="#{guestPreferences.setMenuLayout('overlay')}" ajax="false"/>
+        <p:menuitem id="custom5" value="Horizontal Menu" icon="border_horizontal" actionListener="#{guestPreferences.setMenuLayout('horizontal')}" ajax="false"/>
+        <p:menuitem id="custom6" value="Light Menu" icon="label_outline" actionListener="#{guestPreferences.setLightMenu}" ajax="false" />
+        <p:menuitem id="custom7" value="Dark Menu" icon="label" actionListener="#{guestPreferences.setDarkMenu}" ajax="false"/>
+        <p:menuitem id="custom8" value="Inline Profile" icon="contacts" actionListener="#{guestPreferences.setProfileMode('inline')}" ajax="false" />
+        <p:menuitem id="custom9" value="Top Profile" icon="person_pin" actionListener="#{guestPreferences.setProfileMode('overlay')}" ajax="false"/>
+    </p:submenu>
+  </ui:composition>

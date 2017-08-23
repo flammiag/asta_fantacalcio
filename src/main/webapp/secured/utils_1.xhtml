@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+                
+<ui:define name="head">
+    <style type="text/css">
+        .icon-grid div.ui-g-12 {
+            color: #757575;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+        }
+        
+        .icon-grid i {
+            display: block;
+            margin: 0 auto;
+            font-size: 24px;
+        }
+        
+        pre {
+            font-family: monospace;
+            background-color: #0C2238;
+            color: #dddddd;
+            padding: 1em;
+            font-size: 14px;
+            border-radius: 3px;
+            overflow: auto;
+        }
+        
+        .shadow-box {
+            background-color: #607D8B;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</ui:define>
+
+    <ui:define name="content">
+       <h:form>
+            <div class="ui-fluid">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"/>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="card card-w-title">
+                            <h1>Crea Utente</h1>
+                            <p:panelGrid columns="1" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4" layout="grid" styleClass="ui-panelgrid-blank form-group" style="border:0px none; background-color:transparent;">
+                       
+<!--                                <p:outputLabel for="calendar" value="Calendar"/>
+                                <p:calendar id="calendar"/>
+                                <p:calendar id="inline"  mode="inline"/>-->
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:inputText value="#{userBean.newUser.username}"  />
+                                    <label>Username</label>
+                                </h:panelGroup>
+                                <h:panelGroup styleClass="md-inputfield">
+                                    <p:password value="#{userBean.newUser.password}" />
+                                    <label>Password</label>
+                                </h:panelGroup>
+                                <p:commandButton value="Crea  Utente" action="#{userBean.createUserTest}" icon="ui-icon-check" />
+                            </p:panelGrid>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+                
+            </div>
+           
+       </h:form>
+            
+    </ui:define>
+
+</ui:composition>
