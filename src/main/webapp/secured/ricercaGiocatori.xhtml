@@ -1,0 +1,104 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            .icon-grid div.ui-g-12 {
+                color: #757575;
+                text-align: center;
+                padding: 16px;
+                font-size: 12px;
+            }
+
+            .icon-grid i {
+                display: block;
+                margin: 0 auto;
+                font-size: 24px;
+            }
+
+            pre {
+                font-family: monospace;
+                background-color: #0C2238;
+                color: #dddddd;
+                padding: 1em;
+                font-size: 14px;
+                border-radius: 3px;
+                overflow: auto;
+            }
+
+            .shadow-box {
+                background-color: #607D8B;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <div class="card card-w-title">
+                        <h:form>      
+                            <p:panel id="panel" header="Search Form" style="margin-bottom:10px;">
+                                <p:message for="txt1" />
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputLabel for="txt1" value="Ricerca " />
+                                    <p:inputText id="txt1" value="#{ricercaGiocatoriController.text1}" required="true" label="cerca">
+                                        <f:validateLength minimum="2" />
+                                    </p:inputText>
+                                    <br />
+                                    <ui:repeat value="#{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">
+                                        <h:outputText value="#{giocatore.nome} - "/>
+                                        <h:outputText value="#{giocatore.ruolo1} - "/>
+                                        <h:outputText value="cod: #{giocatore.codice}" />
+                                        <br/>
+                                    </ui:repeat>
+
+                                </h:panelGrid>
+                            </p:panel>
+
+                            <h:panelGrid columns="1">
+                                <p:commandButton process="@parent:@parent" update="@form" value="Cerca" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                    <div class="card card-w-title">
+                        <h1>DataTable</h1>
+                        <p:dataTable var="giocatore" value="#{dataListGiocatori.listGiocatori}" >
+                            <f:facet name="header">
+                                Lista Giocatori Serie A
+                            </f:facet>
+                            <p:column headerText="Codice" sortBy="#{giocatore.codice}">
+                                <h:outputText value="#{giocatore.codice}" />
+                            </p:column>
+                            <p:column headerText="Nome" sortBy="#{giocatore.nome}">
+                                <h:outputText value="#{giocatore.nome}" />
+                            </p:column>
+                            <p:column headerText="Ruolo" sortBy="#{giocatore.ruolo1}">
+                                <h:outputText value="#{giocatore.ruolo1}" />
+                            </p:column>
+                            <p:column headerText="Club" sortBy="#{giocatore.squadra}">
+                                <h:outputText value="#{giocatore.squadra}" />
+                            </p:column>
+
+                        </p:dataTable>
+                    </div>
+
+
+
+                    <div style="text-align:center;margin-bottom:16px;">
+                        <p:commandButton type="button" value="ui-icon-check" icon="ui-icon-check" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
