@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            .icon-grid div.ui-g-12 {
+                color: #757575;
+                text-align: center;
+                padding: 16px;
+                font-size: 12px;
+            }
+
+            .icon-grid i {
+                display: block;
+                margin: 0 auto;
+                font-size: 24px;
+            }
+
+            pre {
+                font-family: monospace;
+                background-color: #0C2238;
+                color: #dddddd;
+                padding: 1em;
+                font-size: 14px;
+                border-radius: 3px;
+                overflow: auto;
+            }
+
+            .shadow-box {
+                background-color: #607D8B;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h:form>      
+                        <p:panel id="panel1" header="Situazione economica" style="margin-bottom:10px;">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Budget"/>
+                                <h:outputText value="500"/>
+                                <h:outputText value="Costo formazione"/>
+                                <h:outputText value="400"/>
+                                <h:outputText value="Credito residuo"/>
+                                <h:outputText value="100"/>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel id="panel11" header="Composizione squadra" style="margin-bottom:10px;">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Portieri"/>
+                                <h:outputText value="3"/>
+                                <h:outputText value="Difensori"/>
+                                <h:outputText value="8"/>
+                                <h:outputText value="Centrocampisti"/>
+                                <h:outputText value="8"/>
+                                <h:outputText value="Attaccanti"/>
+                                <h:outputText value="6"/>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:panel id="panel2" header="Riepilogo Formazione : Portieri" style="margin-bottom:10px;">
+                            <!--<ui:repeat value="{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">-->
+                            <h:panelGrid columns="4" cellpadding="5">
+                                <h:outputText value="Nome"/>
+                                <h:outputText value="Pippo"/>
+                                <h:outputText value=" - Costo"/>
+                                <h:outputText value="400"/>
+                            </h:panelGrid>
+                            <!--</ui:repeat>-->
+                        </p:panel>
+                        <p:panel id="panel3" header="Riepilogo Formazione : Centrocampisti" style="margin-bottom:10px;">
+                            <!--<ui:repeat value="{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">-->
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Nome"/>
+                                <h:outputText value="Pippo"/>
+                                <h:outputText value="Costo"/>
+                                <h:outputText value="400"/>
+                            </h:panelGrid>
+                            <!--</ui:repeat>-->
+                        </p:panel>
+                        <p:panel id="panel4" header="Riepilogo Formazione : Attaccanti" style="margin-bottom:10px;">
+                            <!--<ui:repeat value="{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">-->
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputText value="Nome"/>
+                                <h:outputText value="Pippo"/>
+                                <h:outputText value="Costo"/>
+                                <h:outputText value="400"/>
+                            </h:panelGrid>
+                            <!--</ui:repeat>-->
+                        </p:panel>
+                    </h:form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>
