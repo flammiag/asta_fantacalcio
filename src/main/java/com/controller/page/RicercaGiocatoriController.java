@@ -10,9 +10,12 @@ import com.show.view.data.DataListGiocatori;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import org.apache.log4j.Logger;
+import org.primefaces.model.UploadedFile;
 
 @ManagedBean(name = "ricercaGiocatoriController")
 @SessionScoped
@@ -26,6 +29,7 @@ public class RicercaGiocatoriController implements Serializable {
 
     private ArrayList<Giocatore> risultatoRicerca;
     private String text1;
+    private UploadedFile file;
 
     public RicercaGiocatoriController() {
     }
@@ -41,7 +45,12 @@ public class RicercaGiocatoriController implements Serializable {
         }
 
     }
-
+    public void upload() {
+        if(file != null) {
+            FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
+    }
 
     public String getText1() {
         return text1;
@@ -59,4 +68,13 @@ public class RicercaGiocatoriController implements Serializable {
         this.risultatoRicerca = risultatoRicerca;
     }
 
+    public UploadedFile getFile() {
+        return file;
+    }
+
+    public void setFile(UploadedFile file) {
+        this.file = file;
+    }
+    
+    
 }

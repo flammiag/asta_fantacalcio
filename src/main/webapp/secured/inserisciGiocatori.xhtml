@@ -43,48 +43,14 @@
             <div class="ui-g-12">
                 <div class="card">
                     <div class="card card-w-title">
-                        <h:form>      
-                            <p:panel id="panel" header="Ricerca" style="margin-bottom:10px;">
-                                <p:message for="txt1" />
-                                <h:panelGrid columns="2" cellpadding="5">
-                                    <h:outputLabel for="txt1" value="Inserisci giocatore " />
-                                    <p:inputText id="txt1" value="#{ricercaGiocatoriController.text1}" required="true" label="cerca">
-                                        <f:validateLength minimum="2" />
-                                    </p:inputText>
-                                    <h:panelGrid columns="1">
-                                        <p:commandButton process="@parent:@parent" update="@form" value="Cerca" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
-                                    </h:panelGrid>
-                                    <h:outputText value=""/>
-                                    <ui:repeat value="#{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">
-                                        <h:outputText value="#{giocatore.nome} - "/>
-                                        <h:outputText value="#{giocatore.ruolo1} - "/>
-                                        <h:outputText value="#{giocatore.squadra} - "/>
-                                        <h:outputText value="cod: #{giocatore.codice}" />
-                                        <br/>
-                                    </ui:repeat>
+                        <h:form enctype="multipart/form-data">      
 
-                                </h:panelGrid>
-                            </p:panel>
+                            <p:panel id="panel3" header="Carica File Giocatori" style="margin-bottom:10px;">
+                                <p:growl id="messages" showDetail="true" />
 
+                                <p:fileUpload value="#{ricercaGiocatoriController.file}" mode="simple" skinSimple="true" update="messages"/>
 
-
-                            <p:panel id="panel2" header="Aggiungi ad una formazione" style="margin-bottom:10px;">
-                                <p:message for="txt1" />
-                                <h:panelGrid columns="2" cellpadding="5">
-                                    <h:outputLabel for="txt2" value="Valore " />
-                                    <p:inputText id="txt2" value="#{ricercaGiocatoriController.text1}" required="true" label="valore">
-                                        <f:validateLength minimum="1" />
-                                    </p:inputText>
-                                    <h:outputLabel for="txt3" value="Nome FantaFormazione " />
-                                    <p:inputText id="txt3" value="#{ricercaGiocatoriController.text1}" required="true" label="fantaformazione">
-                                        <f:validateLength minimum="1" />
-                                    </p:inputText>
-                                    <h:panelGrid columns="1">
-                                        <p:commandButton process="@parent:@parent" update="@form" value="Inserisci" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
-                                    </h:panelGrid>
-
-
-                                </h:panelGrid>
+                                <p:commandButton value="Submit" ajax="false" actionListener="#{ricercaGiocatoriController.upload}" disabled="false" />
                             </p:panel>
                         </h:form>
                     </div>
