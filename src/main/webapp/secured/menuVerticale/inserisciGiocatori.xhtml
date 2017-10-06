@@ -1,0 +1,94 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+        <style type="text/css">
+            .icon-grid div.ui-g-12 {
+                color: #757575;
+                text-align: center;
+                padding: 16px;
+                font-size: 12px;
+            }
+
+            .icon-grid i {
+                display: block;
+                margin: 0 auto;
+                font-size: 24px;
+            }
+
+            pre {
+                font-family: monospace;
+                background-color: #0C2238;
+                color: #dddddd;
+                padding: 1em;
+                font-size: 14px;
+                border-radius: 3px;
+                overflow: auto;
+            }
+
+            .shadow-box {
+                background-color: #607D8B;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <div class="card card-w-title">
+                        <h:form enctype="multipart/form-data">      
+
+                            <p:panel id="panel" header="Cerca e aggiungi" style="margin-bottom:10px;">
+                                <p:message for="txt1" />
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputLabel for="txt1" value="Cerca " />
+                                    <h:outputLabel   value="  " />
+                                    
+                                    <p:inputText id="txt1" value="#{ricercaGiocatoriController.text1}" required="true" label="cerca">
+                                        <f:validateLength minimum="2" />
+                                    </p:inputText>
+                                    
+                                    <br />
+
+                                    <!-- Non mostrare pannello se la ricerca va a vuoto, ma un messaggio che dice che deve essere rifatta.-->   
+                                    <p:outputPanel id="customPanel" style="margin-bottom:10px">
+                                        <!--<ui:repeat value="{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">-->
+                                            <p:selectOneRadio id="customRadio" value="#{radioView.color}" layout="custom">
+                                                <f:selectItem itemLabel="nome 1" itemValue="Red2" />
+                                            </p:selectOneRadio>
+
+                                            <h:panelGrid columns="3" cellpadding="5">
+                                                <p:radioButton id="opt1" for="customRadio" itemIndex="0" />
+                                                <h:outputLabel for="opt1" value="Pippo / ruolo : " />
+                                                <p:spinner />
+                                            </h:panelGrid>
+                                        <!--</ui:repeat>-->
+                                    </p:outputPanel>
+
+                                    <div style="text-align:center;margin-bottom:16px;">
+                                        <p:commandButton type="button" value="Inserisci" icon="ui-icon-check" />
+                                    </div>
+                                    <div style="text-align:center;margin-bottom:16px;">
+                                        <h:outputLabel   value="Conferma inserimento con dati del giocatore inserito" />
+                                    </div>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </h:form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

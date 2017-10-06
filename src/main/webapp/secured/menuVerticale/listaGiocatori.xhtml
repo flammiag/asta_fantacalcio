@@ -42,38 +42,13 @@
         <div class="ui-g">
             <div class="ui-g-12">
                 <div class="card">
+ 
                     <div class="card card-w-title">
-                        <h:form>      
-                            <p:panel id="panel" header="Search Form" style="margin-bottom:10px;">
-                                <p:message for="txt1" />
-                                <h:panelGrid columns="2" cellpadding="5">
-                                    <h:outputLabel for="txt1" value="Ricerca " />
-                                    <p:inputText id="txt1" value="#{ricercaGiocatoriController.text1}" required="true" label="cerca">
-                                        <f:validateLength minimum="2" />
-                                    </p:inputText>
-                                    <br />
-                                    <ui:repeat value="#{ricercaGiocatoriController.risultatoRicerca}" var="giocatore">
-                                        <h:outputText value="#{giocatore.nome} - "/>
-                                        <h:outputText value="#{giocatore.ruolo1} - "/>
-                                        <h:outputText value="cod: #{giocatore.codice}" />
-                                        <br/>
-                                    </ui:repeat>
-
-                                </h:panelGrid>
-                            </p:panel>
-
-                            <h:panelGrid columns="1">
-                                <p:commandButton process="@parent:@parent" update="@form" value="Cerca" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
-                            </h:panelGrid>
-                        </h:form>
-                    </div>
-                    <div class="card card-w-title">
-                        <h1>DataTable</h1>
-                        <p:dataTable var="giocatore" value="#{dataListGiocatori.listGiocatori}" >
+                        <p:dataTable var="giocatore" value="#{dataListGiocatori.listGiocatori}" filteredValue="#{dataListGiocatori.listGiocatori}" >
                             <f:facet name="header">
                                 Lista Giocatori Serie A
                             </f:facet>
-                            <p:column headerText="Codice" sortBy="#{giocatore.codice}">
+                            <p:column headerText="Codice" sortBy="#{giocatore.codice}" filterBy="#{giocatore.codice}"   filterMatchMode="contains">
                                 <h:outputText value="#{giocatore.codice}" />
                             </p:column>
                             <p:column headerText="Nome" sortBy="#{giocatore.nome}">
@@ -88,12 +63,7 @@
 
                         </p:dataTable>
                     </div>
-
-
-
-                    <div style="text-align:center;margin-bottom:16px;">
-                        <p:commandButton type="button" value="ui-icon-check" icon="ui-icon-check" />
-                    </div>
+ 
 
                 </div>
             </div>

@@ -43,20 +43,25 @@
             <div class="ui-g-12">
                 <div class="card">
                     <h:form>      
-                        <p:panel id="panel" header="Elenco parametri mercato" style="margin-bottom:10px;">
-                            <p:message for="txt1" />
-                            <h:panelGrid columns="3" cellpadding="5">
-                                <h:outputLabel for="txt1" value="Parametro 1 " />
-                                <p:inputText id="txt1" value="#{ricercaGiocatoriController.text1}" required="true" label="Parametro 1">
-                                    <f:validateLength minimum="1" />
-                                </p:inputText>
-                                <p:commandButton process="@parent:@parent" update="@form" value="Cambia" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
+                        <p:panel id="panel" header="Parametri - passo 2" style="margin-bottom:10px;">
 
-                                <h:outputLabel for="txt2" value="Parametro 2 " />
-                                <p:inputText id="txt2" value="#{ricercaGiocatoriController.text1}" required="true" label="Parametro 2">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel for="nomepresidente" value="Nome presidente" />
+                                <p:inputText id="nomepresidente" value="#{ricercaGiocatoriController.text1}" required="true"  >
                                     <f:validateLength minimum="1" />
                                 </p:inputText>
-                                <p:commandButton process="@parent:@parent" update="@form" value="Cambia" actionListener="#{ricercaGiocatoriController.ricercaGiocatore}"/>
+                                
+                                <h:outputLabel for="nomesquadra" value="Nome squadra" />
+                                <p:inputText id="nomesquadra" value="#{ricercaGiocatoriController.text1}" required="true"  >
+                                    <f:validateLength minimum="1" />
+                                </p:inputText>
+                                
+                                <h:outputLabel for="emailpresidente" value="Email presidente" />
+                                <p:inputText id="emailpresidente" value="#{ricercaGiocatoriController.text1}" required="true"  >
+                                    <f:validateLength minimum="1" />
+                                </p:inputText>
+                                
+                                <p:commandButton     value="Salva dati" />
 
                             </h:panelGrid>
                         </p:panel>

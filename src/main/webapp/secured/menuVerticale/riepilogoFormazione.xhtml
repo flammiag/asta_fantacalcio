@@ -44,25 +44,32 @@
                 <div class="card">
                     <h:form>      
                         <p:panel id="panel1" header="Situazione economica" style="margin-bottom:10px;">
+
                             <h:panelGrid columns="2" cellpadding="5">
-                                <h:outputText value="Budget"/>
-                                <h:outputText value="500"/>
-                                <h:outputText value="Costo formazione"/>
-                                <h:outputText value="400"/>
-                                <h:outputText value="Credito residuo"/>
-                                <h:outputText value="100"/>
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputText value="Budget"/>
+                                    <h:outputText value="500"/>
+                                    <h:outputText value="Costo formazione"/>
+                                    <h:outputText value="400"/>
+                                    <h:outputText value="Credito residuo"/>
+                                    <h:outputText value="100"/>
+                                </h:panelGrid>
+                                <p:knob labelTemplate="{value}%" value="53%"  max="100"  disabled="true"/>      
                             </h:panelGrid>
                         </p:panel>
                         <p:panel id="panel11" header="Composizione squadra" style="margin-bottom:10px;">
-                            <h:panelGrid columns="2" cellpadding="5">
-                                <h:outputText value="Portieri"/>
-                                <h:outputText value="3"/>
-                                <h:outputText value="Difensori"/>
-                                <h:outputText value="8"/>
-                                <h:outputText value="Centrocampisti"/>
-                                <h:outputText value="8"/>
-                                <h:outputText value="Attaccanti"/>
-                                <h:outputText value="6"/>
+                            <h:panelGrid columns="4" cellpadding="5">
+                                <h:outputText value="Portieri 3 di 3"/>
+                                <p:knob labelTemplate="{value}%" value="67%"  max="100" disabled="true" />   
+
+                                <h:outputText value="Difensori 8 di 8"/>
+                                <p:knob labelTemplate="{value}%" value="33%"  max="100"   disabled="true"/>  
+
+                                <h:outputText value="Centrocampisti 8 di 8"/>
+                                <p:knob labelTemplate="{value}%" value="3%"  max="100"  disabled="true"/>   
+
+                                <h:outputText value="Attaccanti 6 di 6"/>
+                                <p:knob labelTemplate="{value}%" value="53%"  max="100"  disabled="true"/>   
                             </h:panelGrid>
                         </p:panel>
                         <p:panel id="panel2" header="Riepilogo Formazione : Portieri" style="margin-bottom:10px;">

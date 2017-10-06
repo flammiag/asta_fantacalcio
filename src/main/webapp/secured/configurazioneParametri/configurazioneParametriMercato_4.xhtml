@@ -42,20 +42,18 @@
         <div class="ui-g">
             <div class="ui-g-12">
                 <div class="card">
-                    <div class="card card-w-title">
-                        <h:form enctype="multipart/form-data">      
-
-                            <p:panel id="panel3" header="Carica File Giocatori" style="margin-bottom:10px;">
+                    <h:form>      
+                        <p:panel id="panel33" header="Carica File Giocatori" style="margin-bottom:10px;">
+                            <h:panelGrid columns="1" cellpadding="5">
                                 <p:growl id="messages" showDetail="true" />
+                                <p:fileUpload label="Scegli file" value="#{ricercaGiocatoriController.file}" mode="simple" skinSimple="true" update="messages" />
+                                <br/>
+                                <p:commandButton value="Carica" ajax="false" actionListener="#{ricercaGiocatoriController.upload}" disabled="false" />
+                                <h:outputLabel value="Il file caricato contiene 800 giocatori" />
+                            </h:panelGrid>
 
-                                <p:fileUpload value="#{ricercaGiocatoriController.file}" mode="simple" skinSimple="true" update="messages"/>
-
-                                <p:commandButton value="Submit" ajax="false" actionListener="#{ricercaGiocatoriController.upload}" disabled="false" />
-                            </p:panel>
-                        </h:form>
-                    </div>
-
-
+                        </p:panel>
+                    </h:form>
                 </div>
             </div>
         </div>
