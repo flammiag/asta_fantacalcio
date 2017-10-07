@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Giocatore implements Serializable{
     
-    
+    private Integer idgiocatore;
     private String codice;
     private String nome;
     private String ruolo1;
@@ -67,6 +67,14 @@ public class Giocatore implements Serializable{
 
     public void setFantasquadra(String fantasquadra) {
         this.fantasquadra = fantasquadra;
+    }
+
+    public Integer getIdgiocatore() {
+        return idgiocatore;
+    }
+
+    public void setIdgiocatore(Integer idgiocatore) {
+        this.idgiocatore = idgiocatore;
     }
     
     

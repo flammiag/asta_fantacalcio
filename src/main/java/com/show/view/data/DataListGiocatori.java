@@ -7,6 +7,7 @@ package com.show.view.data;
 
 import com.controller.page.RicercaGiocatoriController;
 import com.primefaces.hibernate.bean.Giocatore;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,19 +33,11 @@ public class DataListGiocatori implements Serializable {
     private static final Logger logger = Logger.getLogger(DataListGiocatori.class.getName());
     private ArrayList<Giocatore> listGiocatori = new ArrayList<Giocatore>();
 
-    @PostConstruct
-    public void init() {
-        try {
-            setListGiocatori(leggiListaGiocatori());
-        } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(RicercaGiocatoriController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public ArrayList<Giocatore> leggiListaGiocatori() throws FileNotFoundException, IOException {
+    public ArrayList<Giocatore> leggiListaGiocatori(String path) throws FileNotFoundException, IOException {
         ArrayList<Giocatore> listaGiocatori = new ArrayList<Giocatore>();
+
         CSVParser parser = new CSVParser(
-                new FileReader("C:\\temp\\Lista.csv"),
+                new FileReader(path),
                 CSVFormat.DEFAULT.withHeader());
         for (CSVRecord record : parser) {
             Giocatore giocatore = new Giocatore();
@@ -66,7 +59,7 @@ public class DataListGiocatori implements Serializable {
             giocatore.setRuolo2(record.get("Ruolo2"));
             listaGiocatori.add(giocatore);
 
-            logger.info("<<< " + record.toString());
+            logger.log(Level.INFO, "<<< {0}", record.toString());
 
         }
         parser.close();

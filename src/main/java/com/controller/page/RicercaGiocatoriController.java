@@ -35,14 +35,14 @@ public class RicercaGiocatoriController implements Serializable {
     }
 
     public void ricercaGiocatore() throws IOException {
-        DataListGiocatori dataList = new DataListGiocatori();
-        risultatoRicerca = new ArrayList<Giocatore>();
-        for (Giocatore element : dataList.leggiListaGiocatori()) {
-            if (text1.toUpperCase().equalsIgnoreCase(element.getNome())) {
-                
-                risultatoRicerca.add(element);
-            }
-        }
+//        DataListGiocatori dataList = new DataListGiocatori();
+//        risultatoRicerca = new ArrayList<Giocatore>();
+//        for (Giocatore element : dataList.leggiListaGiocatori()) {
+//            if (text1.toUpperCase().equalsIgnoreCase(element.getNome())) {
+//                
+//                risultatoRicerca.add(element);
+//            }
+//        }
 
     }
     public void upload() {

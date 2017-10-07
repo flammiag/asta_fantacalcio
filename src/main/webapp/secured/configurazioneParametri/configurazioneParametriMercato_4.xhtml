@@ -45,11 +45,14 @@
                     <h:form>      
                         <p:panel id="panel33" header="Carica File Giocatori" style="margin-bottom:10px;">
                             <h:panelGrid columns="1" cellpadding="5">
+                                <p:fileUpload fileUploadListener="#{caricaListaGiocatoriView.handleFileUpload}" 
+                                              mode="advanced" dragDropSupport="true"
+                                              update="messages" sizeLimit="100000" 
+                                              fileLimit="3" allowTypes="/(\.|\/)(csv)$/" 
+                                              label="Scegli" 
+                                              cancelLabel="Annulla"
+                                              />
                                 <p:growl id="messages" showDetail="true" />
-                                <p:fileUpload label="Scegli file" value="#{ricercaGiocatoriController.file}" mode="simple" skinSimple="true" update="messages" />
-                                <br/>
-                                <p:commandButton value="Carica" ajax="false" actionListener="#{ricercaGiocatoriController.upload}" disabled="false" />
-                                <h:outputLabel value="Il file caricato contiene 800 giocatori" />
                             </h:panelGrid>
 
                         </p:panel>

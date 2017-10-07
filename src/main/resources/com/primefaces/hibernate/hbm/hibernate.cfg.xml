@@ -23,5 +23,6 @@
     <mapping resource="com/primefaces/hibernate/hbm/country.hbm.xml"/>
     <mapping resource="com/primefaces/hibernate/hbm/city.hbm.xml"/>
     <mapping resource="com/primefaces/hibernate/hbm/address.hbm.xml"/>
+    <mapping resource="com/primefaces/hibernate/hbm/giocatore.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

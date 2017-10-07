@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.primefaces.hibernate.bean.Giocatore" table="giocatore">
+    <id column="idgiocatore" name="idgiocatore" type="java.lang.Integer">
+      <generator class="native"/>
+    </id>
+ 
+    <property name="codice" type="java.lang.String">
+      <column name="codice"/>
+    </property>
+    <property name="nome" type="java.lang.String">
+      <column name="nome"/>
+    </property>
+    <property name="ruolo1" type="java.lang.String">
+      <column name="ruolo"/>
+    </property>
+    <property name="squadra" type="java.lang.String">
+      <column name="club"/>
+    </property>
+    <property name="fantasquadra" type="java.lang.String">
+      <column name="fantasquadra"/>
+    </property>
+     
+  </class>
+</hibernate-mapping>
